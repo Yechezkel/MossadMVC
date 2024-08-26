@@ -1,0 +1,93 @@
+﻿
+@model IEnumerable<MossadServer.Models.Mission>
+@{
+    ViewData["Title"] = "MissionByStatus";
+}
+<h1>@ViewBag.Status</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Agent.Id
+            </th>
+            <th>
+                Agent.Name
+            </th>
+            <th>
+                Agent.X
+            </th>
+            <th>
+                Agent.Y
+            </th>
+            <th>
+                Target.Id
+            </th>
+            <th>
+                Target.Name
+            </th>
+            <th>
+                Target.Role
+            </th>
+            <th>
+                Target.X
+            </th>
+            <th>
+                Target.Y
+            </th>
+            <th>
+                PairingTime
+            </th>
+            <th>
+                ExecutionTime
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agent.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agent.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agent.X)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Agent.Y)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Target.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Target.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Target.Role)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Target.X)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Target.Y)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExecutionTime)
+                </td>
+                <td>
+                    @if (@ViewBag.Status == "Offers")
+                    {
+                        <a asp-action="Confirm" asp-route-id="@item.Id">Confirm mission</a>
+                    }
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

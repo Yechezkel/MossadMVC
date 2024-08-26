@@ -1,0 +1,51 @@
+﻿@model MossadMVC.Models.Info
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Information</h1>
+
+<div>
+    <h4>Agent</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SumActiveAgents)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SumActiveAgents)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SumTotalAgents)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SumTotalAgents)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SumActiveTargets)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SumActiveTargets)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SumTotalTargets)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SumTotalTargets)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ToPairRatio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ToPairRatio)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalRatio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalRatio)
+        </dd>
+    </dl>
+</div>
+
